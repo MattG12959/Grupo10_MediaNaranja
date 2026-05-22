@@ -10,4 +10,10 @@ package enums;
  */
 public enum TipoPlace {
     
+    CHILL,
+    FUN,
+    SENSUAL,
+    ROMANTIC,
+    EXCITING
+    
 }

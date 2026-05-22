@@ -9,5 +9,7 @@ package enums;
  * @author Nehuen
  */
 public enum TipoFeedback {
-    
+    LIKE,
+    REGULAR,
+    DISLIKE
 }
