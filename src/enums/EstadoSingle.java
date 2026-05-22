@@ -9,5 +9,8 @@ package enums;
  * @author Nehuen
  */
 public enum EstadoSingle {
-    
+    SINGLE,
+    MATCHED,
+    UNMATCHED,
+    INACTIVO
 }

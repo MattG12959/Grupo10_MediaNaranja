@@ -9,5 +9,7 @@ package enums;
  * @author Nehuen
  */
 public enum Nivel {
-    
+    BAJO,
+    MEDIO,
+    ALTO
 }

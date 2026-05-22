@@ -9,5 +9,6 @@ package enums;
  * @author Nehuen
  */
 public enum ResultadoMatch {
-    
+    MATCH,
+    UNMATCH
 }
