@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package grupo10_medianaranja;
-
+import enums.Nivel;
 /**
  *
  * @author Usuario
