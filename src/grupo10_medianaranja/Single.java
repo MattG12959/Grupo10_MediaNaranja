@@ -3,13 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package grupo10_medianaranja;
-import java.util.*
+
+import java.util.*;
+import enums.EstadoCivil;
+import enums.EstadoSingle;
+
 /**
  *
  * @author Usuario
  */
 public class Single {
-    
+
     private String dni;
     private String nombreCompleto;
     private String direccion;
@@ -27,6 +31,11 @@ public class Single {
     private Date fechaInscripcion;
     private boolean matched;
     private int nroTarjeta;
+    private Profile perfil;
+    private List<Prefer> preferencias;
+    private TarjetaCredito tarjetaCredito;
+    private List<Pago> pagos;
+    private List<StoryMatch> historiaMatches;
 
     public Single() {
     }
@@ -49,6 +58,14 @@ public class Single {
         this.fechaInscripcion = fechaInscripcion;
         this.matched = matched;
         this.nroTarjeta = nroTarjeta;
+    }
+
+    public Single(Profile perfil, List<Prefer> preferencias, TarjetaCredito tarjetaCredito, List<Pago> pagos, List<StoryMatch> historiaMatches) {
+        this.perfil = perfil;
+        this.preferencias = preferencias;
+        this.tarjetaCredito = tarjetaCredito;
+        this.pagos = pagos;
+        this.historiaMatches = historiaMatches;
     }
 
     public String getDni() {
@@ -187,68 +204,132 @@ public class Single {
         this.nroTarjeta = nroTarjeta;
     }
 
+    public Profile getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(Profile perfil) {
+        this.perfil = perfil;
+    }
+
+    public List<Prefer> getPreferencias() {
+        return preferencias;
+    }
+
+    public void setPreferencias(List<Prefer> preferencias) {
+        this.preferencias = preferencias;
+    }
+
+    public TarjetaCredito getTarjetaCredito() {
+        return tarjetaCredito;
+    }
+
+    public void setTarjetaCredito(TarjetaCredito tarjetaCredito) {
+        this.tarjetaCredito = tarjetaCredito;
+    }
+
+    public List<Pago> getPagos() {
+        return pagos;
+    }
+
+    public void setPagos(List<Pago> pagos) {
+        this.pagos = pagos;
+    }
+
+    public List<StoryMatch> getHistoriaMatches() {
+        return historiaMatches;
+    }
+
+    public void setHistoriaMatches(List<StoryMatch> historiaMatches) {
+        this.historiaMatches = historiaMatches;
+    }
+
     @Override
     public String toString() {
         return "Single{" + "dni=" + dni + ", nombreCompleto=" + nombreCompleto + ", direccion=" + direccion + ", localidad=" + localidad + ", email=" + email + ", estadoCivil=" + estadoCivil + ", edad=" + edad + ", sexo=" + sexo + ", tieneHijos=" + tieneHijos + ", crush=" + crush + ", usuario=" + usuario + ", contrasenia=" + contrasenia + ", foto=" + foto + ", estado=" + estado + ", fechaInscripcion=" + fechaInscripcion + ", matched=" + matched + ", nroTarjeta=" + nroTarjeta + '}';
     }
 
-public void registrarse(){
+    public void registrarse() {
+        this.fechaInscripcion = new Date();
+        this.estado = EstadoSingle.SINGLE;
+        System.out.println("Single registrado: " + nombreCompleto);
 
-}
+    }
 
-public void iniciarSesion(){
+    public boolean iniciarSesion(String usuario, String conatrasenia) {
 
-}
+        return this.usuario.equals(usuario) && this.contrasenia.equals(contrasenia);
+    }
 
-public void modificarDatos(){
+    public void modificarDatos(String nombreCompleto, String direccion, String localidad, String email) {
+        this.nombreCompleto = nombreCompleto;
+        this.direccion = direccion;
+        this.localidad = localidad;
+        this.email = email;
+    }
 
-}
+    public void modificarPerfil(Profile nuevoPerfil) {
+        this.perfil = nuevoPerfil;
+    }
 
-public void modificarPerfil(){
+    public void modificarPreferencias(Prefer nuevaPreferencia) {
+        if (preferencias == null) {
+            preferencias = new ArrayList<>();
+        }
+        preferencias.add(nuevaPreferencia);
 
-}
+    }
 
-public void modificarPreferencias(){
+    public void darBajaCrush() {
+        this.crush = null;
 
-}
+    }
 
-public void darBajaCrush(){
+    public void darseDeBaja() {
+        this.estado = EstadoSingle.INACTIVO;
 
-}
+    }
 
-public void darseDeBaja(){
+    public void calcularCuotaMensual() {
 
-}
+    }
 
-public void calcularCuotaMensual(){
+    public void pagarMensualidad() {
+        double monto = calcularCuotaMensual();
+        Pago pago = new Pago();
+        pago.setMonto(monto);
+        pago.setDescripcion("Mensualidad - " + nombreCompleto);
+        pago.setFechaPago(new Date());
 
-}
+        if (tarjetaCredito != null && tarjetaCredito.realizarPago(pago)) {
+            pagos.add(pago);
+            return pago;
+        }
+        return null;
 
-public void pagarMensualidad(){
+    }
 
-}
+    public List<StoryMatch> obtenerHistorialMatches() {
+        return historiaMatches;
 
-public void obtenerHistorialMatches(){
+    }
 
-}
+    public void agregarStoryMatch(StoryMatch match) {
+        historiaMatches.add(match);
+        this.matched = true;
+        this.estado = EstadoSingle.MATCHED;
 
-public void agregarStoryMatch(){
+    }
 
-}
+    public void recibirMail(String asunto, String mensaje) {
+        System.out.println("Mail enviado a " + email);
+        System.out.println("Asunto: " + asunto);
+        System.out.println("Mensaje: " + mensaje);
 
-public void recibirMail(){
+    }
 
-}
-
-public boolean tieneCrush(){
- boolean tieneCrush;
- Single single;
- 
-    if (!(crush = single)){
-    } else {
-        tieneCrush = true;
-        } 
-        return false;
-}
+    public boolean tieneCrush() {
+        return crush != null;
+    }
 
 }
