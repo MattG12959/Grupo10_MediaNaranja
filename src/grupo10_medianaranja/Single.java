@@ -7,6 +7,10 @@ package grupo10_medianaranja;
 import java.util.*;
 import enums.EstadoCivil;
 import enums.EstadoSingle;
+import modelo.Pago;
+import modelo.Prefer;
+import modelo.StoryMatch;
+import modelo.TarjetaCredito;
 
 /**
  *
