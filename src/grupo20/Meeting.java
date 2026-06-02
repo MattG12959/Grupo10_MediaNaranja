@@ -28,6 +28,7 @@ public class Meeting {
         this.puntosObtenidos = puntosObtenidos;
         this.valoracion = valoracion;
         this.lugarDeLaCita = Lugar;
+        this.Lugares = new ArrayList<>();
     }
     
     //
@@ -42,7 +43,62 @@ public class Meeting {
     void mostrarLugar(){
         System.out.println("Lugar de la cita:"+ lugarDeLaCita);
     } 
-    void feedback(){}
-    
+  public void agregarFeedback(Feedback feedback) {
+    this.feedbackDeMeeting = feedback;
 }
+ public void verFeedback() {
+
+    System.out.println("Feedback del Meeting:");
+
+    System.out.println(feedbackDeMeeting);
+}
+    
+
+
+    public Date getFechaDeMeeting() {
+        return fechaDeMeeting;
+    }
+
+    public String getDetalle() {
+        return detalle;
+    }
+
+    public int getPuntosObtenidos() {
+        return puntosObtenidos;
+    }
+
+    public int getValoracion() {
+        return valoracion;
+    }
+
+    public Places getLugarDeLaCita() {
+        return lugarDeLaCita;
+    }
+
+    // Setters
+
+    public void setDetalle(String detalle) {
+        this.detalle = detalle;
+    }
+
+    public void setPuntosObtenidos(int puntosObtenidos) {
+        this.puntosObtenidos = puntosObtenidos;
+    }
+
+    public void setValoracion(int valoracion) {
+        this.valoracion = valoracion;
+    }
+
+    @Override
+    public String toString() {
+        return "Meeting{" +
+                "fecha=" + fechaDeMeeting +
+                ", detalle='" + detalle + '\'' +
+                ", puntos=" + puntosObtenidos +
+                ", valoracion=" + valoracion +
+                ", lugar=" + lugarDeLaCita +
+                '}';
+    }
+}
+
 
