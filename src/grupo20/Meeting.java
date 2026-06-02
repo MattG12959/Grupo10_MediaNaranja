@@ -32,29 +32,27 @@ public class Meeting {
     }
     
     //
-    void verLugares(){
-                System.out.println("Listar Lugares");
+    public void verLugares(){
+        System.out.println("Listar Lugares");
         int i=0;
         for (Places Lugar : Lugares) {
             System.out.println("lugar " +i+" "+ Lugar);
             i++;
         }
     }
-    void mostrarLugar(){
+    public void mostrarLugar(){
         System.out.println("Lugar de la cita:"+ lugarDeLaCita);
-    } 
-  public void agregarFeedback(Feedback feedback) {
-    this.feedbackDeMeeting = feedback;
-}
- public void verFeedback() {
-
-    System.out.println("Feedback del Meeting:");
-
-    System.out.println(feedbackDeMeeting);
-}
+    }
     
-
-
+    public void agregarFeedback(Feedback feedback) {
+        this.feedbackDeMeeting = feedback;
+    }
+    
+    public void verFeedback() {
+        System.out.println("Feedback del Meeting:");
+        System.out.println(feedbackDeMeeting);
+    }
+    
     public Date getFechaDeMeeting() {
         return fechaDeMeeting;
     }
