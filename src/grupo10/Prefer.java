@@ -45,6 +45,41 @@ public class Prefer {
     private Date fechaCreacion;
     private boolean activa;
 
+    public Prefer(EstadoCivil estadoCivilDeseado, int edadMinima, int edadMaxima, boolean aceptaHijos, Nivel nivelCulturalDeseado, double estaturaMin, double estaturaMax, double pesoMin, double pesoMax, String colorPeloDeseado, String colorOjosDeseado, Nivel nivelCarinioDeseado, Nivel nivelAlegriaDeseado, Nivel nivelCompanierismoDeseado, Nivel nivelSalidorDeseado, String aficionesDeseadas, int prioridadEstadoCivil, int prioridadEdad, int prioridadHijos, int prioridadNivelCultural, int prioridadEstatura, int prioridadPeso, int prioridadPelo, int prioridadOjos, int prioridadCarinio, int prioridadAlegria, int prioridadCompanierismo, int prioridadSalidor, Date fechaCreacion, boolean activa) {
+        this.estadoCivilDeseado = estadoCivilDeseado;
+        this.edadMinima = edadMinima;
+        this.edadMaxima = edadMaxima;
+        this.aceptaHijos = aceptaHijos;
+        this.nivelCulturalDeseado = nivelCulturalDeseado;
+        this.estaturaMin = estaturaMin;
+        this.estaturaMax = estaturaMax;
+        this.pesoMin = pesoMin;
+        this.pesoMax = pesoMax;
+        this.colorPeloDeseado = colorPeloDeseado;
+        this.colorOjosDeseado = colorOjosDeseado;
+        this.nivelCarinioDeseado = nivelCarinioDeseado;
+        this.nivelAlegriaDeseado = nivelAlegriaDeseado;
+        this.nivelCompanierismoDeseado = nivelCompanierismoDeseado;
+        this.nivelSalidorDeseado = nivelSalidorDeseado;
+        this.aficionesDeseadas = aficionesDeseadas;
+        this.prioridadEstadoCivil = prioridadEstadoCivil;
+        this.prioridadEdad = prioridadEdad;
+        this.prioridadHijos = prioridadHijos;
+        this.prioridadNivelCultural = prioridadNivelCultural;
+        this.prioridadEstatura = prioridadEstatura;
+        this.prioridadPeso = prioridadPeso;
+        this.prioridadPelo = prioridadPelo;
+        this.prioridadOjos = prioridadOjos;
+        this.prioridadCarinio = prioridadCarinio;
+        this.prioridadAlegria = prioridadAlegria;
+        this.prioridadCompanierismo = prioridadCompanierismo;
+        this.prioridadSalidor = prioridadSalidor;
+        this.fechaCreacion = fechaCreacion;
+        this.activa = activa;
+    }
+    
+    
+
     public Prefer() {
         this.fechaCreacion = new Date();
         this.activa = true;
