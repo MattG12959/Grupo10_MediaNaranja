@@ -4,7 +4,7 @@ package grupo10_medianaranja;
  *
  * @author matia, Nehuen Zerdá
  */
-public class Main {
+public class main {
 
     /**
      * @param args the command line arguments
