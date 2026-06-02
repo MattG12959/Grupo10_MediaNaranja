@@ -2,19 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package grupo10_medianaranja;
+package grupo10;
 
 import java.util.*;
 import enums.EstadoCivil;
 import enums.EstadoSingle;
 import modelo.Pago;
-import modelo.Prefer;
-import modelo.StoryMatch;
+import grupo10.Prefer;
+import grupo20.StoryMatch;
 import modelo.TarjetaCredito;
 
 /**
  *
- * @author Usuario
+ * @author Antonacci Matías, Dave Natalia, Zerdán Nehuen
  */
 public class Single {
 
@@ -342,4 +342,22 @@ public class Single {
         return crush != null;
     }
 
+    public Prefer getPreferActual() {
+        if (preferencias == null || preferencias.isEmpty()) {
+            return null;
+        }
+        // Retorna la preferencia activa, o la última si ninguna está activa
+        for (Prefer p : preferencias) {
+            if (p.isActiva()) {
+                return p;
+            }
+        }
+        return preferencias.get(preferencias.size() - 1);
+    }
+
+    public Profile getProfile() {
+        return perfil;
+    }
+
 }
+

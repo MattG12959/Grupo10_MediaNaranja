@@ -2,11 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package grupo10_medianaranja;
+package grupo10;
+
 import enums.Nivel;
+
 /**
  *
- * @author Usuario
+ * @author Antonacci Matías, Dave Natalia, Zerdán Nehuen
  */
 public class Profile {
     private double estatura;
@@ -142,5 +144,5 @@ public class Profile {
     
     }
     
+    
 }
-

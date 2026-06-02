@@ -3,7 +3,7 @@ package grupo20;
 import java.util.ArrayList; 
 import java.util.Date;
 import java.util.List;
-import modelo.Single;
+import grupo10.Single;
 
 public class StoryMatch {
     
@@ -37,13 +37,14 @@ public class StoryMatch {
    }
    
    void calcularTotalPoints(){
+     
    }
    
-   void matchExitoso(){
-       matchExitoso = true;
-   }
+  public void marcarMatchExitoso() {
+        this.matchExitoso = true;
+    }
 
-   boolean vencioLaFecha(Date fechaAComparar){
+   public boolean vencioLaFecha(Date fechaAComparar){
        if(fechaFin.after(fechaAComparar)){
            System.out.println("La fecha todavía no venció");
            return false;
@@ -53,15 +54,22 @@ public class StoryMatch {
        }
    }
    
-   void registrarResultado(Feedback feedback){
+  public void registrarResultado(Feedback feedback){
        this.feedback = feedback;
    }
    
-   void listarMeetings(){
+  public void listarMeetings(){
        for (Meeting meeting : meetings) {
            System.out.println(meeting); 
        }
    }
-   
-   //getters y setters
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public boolean isMatchExitoso() {
+        return matchExitoso;
+    }
+
 }
