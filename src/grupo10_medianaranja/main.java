@@ -2,8 +2,11 @@ package grupo10_medianaranja;
 
 import enums.EstadoCivil;
 import enums.Nivel;
+import grupo10.Prefer;
 import grupo10.Profile;
 import grupo10.Single;
+import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -55,6 +58,39 @@ public class main {
         single1.modificarPerfil(perfilSingle1);
         
         System.out.println(single1.getProfile().toString());
+        
+        Prefer preferenciasSingle1 = new Prefer(
+                EstadoCivil.SOLTERO,
+                20,
+                40,
+                true,
+                Nivel.MEDIO,
+                1.40,
+                1.70,
+                50.0,
+                80.0,
+                "Castaño",
+                "Marron",
+                Nivel.ALTO, //nivel carinio
+                Nivel.ALTO, // nivel alegria
+                Nivel.MEDIO, // nivel companerismo
+                Nivel.BAJO, // nivel salidor
+                "Salidas, Comidas",
+                5,
+                3,
+                2,
+                4,
+                2,
+                3,
+                1,
+                1,
+                4,
+                5,
+                3,
+                4,
+                new Date(),
+                true      
+        );
         
     
     
