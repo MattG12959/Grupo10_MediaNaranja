@@ -29,3 +29,4 @@ replay_pid*
 build/
 nbproject/build-impl.xml
 nbproject/genfiles.properties
+/dist/
