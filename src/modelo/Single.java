@@ -162,11 +162,12 @@ public class Single {
     }
 
     public void pagarMensualidad() {
+    double monto = calcularCuotaMensual();
 
-        double monto = calcularCuotaMensual();
-
-        tarjetaCredito.realizarPago(monto);
-    }
+    Pago pago = new Pago(0, monto, new Date(), "Mensualidad");
+    
+    tarjetaCredito.realizarPago(pago);
+}
 
     public void agregarStoryMatch(StoryMatch match) {
 
