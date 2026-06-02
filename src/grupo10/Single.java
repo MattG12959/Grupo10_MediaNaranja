@@ -260,7 +260,7 @@ public class Single {
 
     }
 
-    public boolean iniciarSesion(String usuario, String conatrasenia) {
+    public boolean iniciarSesion(String usuario, String contrasenia) {
 
         return this.usuario.equals(usuario) && this.contrasenia.equals(contrasenia);
     }
