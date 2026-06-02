@@ -294,23 +294,29 @@ public class Single {
 
     }
 
-    public void calcularCuotaMensual() {
+    public double calcularCuotaMensual() {
+        double cuota = 5000.00; 
+    
+    return cuota; 
 
     }
 
-    public void pagarMensualidad() {
+    public Pago pagarMensualidad() {
         double monto = calcularCuotaMensual();
-        Pago pago = new Pago();
-        pago.setMonto(monto);
-        pago.setDescripcion("Mensualidad - " + nombreCompleto);
-        pago.setFechaPago(new Date());
+
+
+        int id = 1;
+        String descripcion = "Mensualidad - " + nombreCompleto;
+        Date fecha = new Date();
+
+        Pago pago = new Pago(id, monto, fecha, descripcion);
 
         if (tarjetaCredito != null && tarjetaCredito.realizarPago(pago)) {
             pagos.add(pago);
             return pago;
         }
-        return null;
 
+        return null;
     }
 
     public List<StoryMatch> obtenerHistorialMatches() {

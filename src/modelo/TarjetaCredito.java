@@ -83,16 +83,19 @@ public class TarjetaCredito {
         System.out.println("Cobro generado por $" + monto);
     }
 
-    public void realizarPago(double monto) {
+
+    public boolean realizarPago(Pago pago) { 
 
         if (validarTarjeta()) {
-
             System.out.println("Pago realizado con éxito.");
-            System.out.println("Monto: $" + monto);
 
+
+            System.out.println("Monto: $" + pago.getMonto());
+
+            return true; 
         } else {
-
             System.out.println("Tarjeta inválida.");
+            return false; 
         }
     }
 }
